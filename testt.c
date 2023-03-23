@@ -32,6 +32,8 @@ int main()
 	display(head);
 	addAtBeginning(&head,2);
 	display(head);
+	modif(&head,4,10);
+	display(head);
 	return 0;
 	
 }

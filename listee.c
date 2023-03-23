@@ -39,3 +39,16 @@ void display(Node *head)
 	}
 	printf("\n");
 }
+
+///vom adauga noua functie
+
+void modif(Node **head, int k, Data n)
+{
+	int i;
+	Node *aux=*head;
+	for(i=k;i>0;i--)
+	{
+		aux=aux->next;
+	}
+	aux->val=n;
+}
