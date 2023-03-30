@@ -8,6 +8,7 @@ typedef struct Node{
 }Node;
 
 typedef struct Queue{
+	Data val;
 	struct Queue *front;
 	struct Queue *rear;
 	struct Queue *next;
@@ -17,7 +18,8 @@ typedef struct Queue{
 Queue* createQueue(){
 	Queue *q;
 	q=(Queue *)malloc(sizeof(Queue));
-	if (q==NULL) return NULL;	
+	if (q==NULL) 
+	     return NULL;
 	q->front=q->rear=NULL;
 	return q;	
 }
@@ -45,7 +47,7 @@ Data deQueue(Queue*q) {
 	return d;  	
 } 
 
-int isEmpty(Queue*q){
+int isEmpty_cozi(Queue*q){
 	return (q->front==NULL);
 }
 
@@ -57,4 +59,22 @@ void deleteQueue(Queue*q){
 		free(aux);
 	}
 	free(q);
-}	
+}
+
+void inversare(Queue **q)
+{
+	Queue *aux=*q;
+	Queue *head=aux;
+	Node stiva;
+	do
+	{
+		push(stiva,aux->val+48);
+		aux=aux->front;
+	}while(!isEmpty(aux));
+	do
+	{
+		head->val=aux->val;
+		head=head->front;
+		deleteStack(stiva);
+	}while(!isEmpty(head));
+}
