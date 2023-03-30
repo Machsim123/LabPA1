@@ -2,7 +2,8 @@
 
 int main()
 {
-	printf("%d ",top(NULL));
-	return 0;
-
+	///printf("%d ",top(NULL));
+    Data v[5]="(12)";
+    printf("%d ",verif(v));
+    return 0;
 }

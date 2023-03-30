@@ -12,3 +12,5 @@ Data pop();
 int isEmpty();
 
 void deleteStack();
+
+int verif();

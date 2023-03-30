@@ -37,8 +37,29 @@ int isEmpty(Node*top){
 void deleteStack(Node**top){ 
 	Node  *temp;
 	while (!isEmpty(*top))
-		temp=*top;
+		{temp=*top;
 		*top=(*top)->next;
-		free(temp);
+		free(temp);}
 	}
 
+int verif(Data v[])
+{
+	int i=0;
+	Node *stiva=NULL;
+	while(v[i]!=NULL)
+	{
+	  if(v[i]=="(") 
+	  {
+	   push(stiva,i+48);
+      }
+      else if(v[i]==")")
+      {
+      	deleteStack(stiva);
+	  }
+	  i++;
+	  
+	}
+	if (stiva!=NULL) 
+		return stiva->val;
+	else return -1;
+}
