@@ -11,7 +11,6 @@ typedef struct Queue{
 	Data val;
 	struct Queue *front;
 	struct Queue *rear;
-	struct Queue *next;
 	
 }Queue;
 
